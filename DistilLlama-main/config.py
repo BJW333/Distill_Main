@@ -28,7 +28,7 @@ class ModelArgs:
 
 @dataclass
 class TrainArgs(ModelArgs):
-    n_epochs: int = 2
+    n_epochs: int = 3
     log_interval: int = 3000
     lr: float = 3e-4
     warmup_steps: int = 4000
