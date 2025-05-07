@@ -12,10 +12,10 @@ class ModelArgs:
     ffn_dim_multiplier: Optional[float] = None
     norm_eps: float = 1e-5
     mode: str = 'train'
-    batch_size: int = 64 # this is used when more computation space is avaiable 
-    #batch_size: int = 8    # <-- change this if you run out of memory/computation space
-    max_seq_length: int = 1024
-    #max_seq_length: int = 512 smaller max seq length cause u dont need as long context things/conversations if ur computing cant handle in training
+    #batch_size: int = 64 # this is used when more computation space is avaiable 
+    batch_size: int = 32    # <-- change this if you run out of memory/computation space
+    #max_seq_length: int = 1024
+    max_seq_length: int = 512 #smaller max seq length cause u dont need as long context things/conversations if ur computing cant handle in training
     dropout: float = 0.1
     attn_dropout: float = 0.1
     layer_drop: float = 0.1
@@ -28,15 +28,15 @@ class ModelArgs:
 
 @dataclass
 class TrainArgs(ModelArgs):
-    n_epochs: int = 3
-    log_interval: int = 3000
-    lr: float = 3e-4
-    warmup_steps: int = 4000
+    n_epochs: int = 4
+    log_interval: int = 100
+    lr: float = 2e-4    #3e-4
+    warmup_steps: int = 4700 #4000
     accumulation_steps: int = 2 # this results in bigger 
     #accumulation_steps: int = 16   # <-- increases gradient accumulation so micro-batches are smaller
     load_model: bool = True
     temperature: float = 2.0
-    alpha: float = 0.3
+    alpha: float = 0.5  #0.3
     n_random_sample: int = 5000
     save_dir: str = 'DistilLlama-Checkpoints'
 
