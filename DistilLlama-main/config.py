@@ -32,7 +32,7 @@ class TrainArgs(ModelArgs):
     log_interval: int = 3000
     lr: float = 3e-4
     warmup_steps: int = 4000
-    accumulation_steps: int = 8 # this results in bigger 
+    accumulation_steps: int = 2 # this results in bigger 
     #accumulation_steps: int = 16   # <-- increases gradient accumulation so micro-batches are smaller
     load_model: bool = True
     temperature: float = 2.0
