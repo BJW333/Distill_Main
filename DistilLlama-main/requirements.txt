@@ -1,0 +1,6 @@
+datasets==3.0.2
+pyarrow==17.0.0
+sentencepiece==0.2.0
+torch==2.5.0
+tqdm==4.67.0
+transformers==4.46.2
